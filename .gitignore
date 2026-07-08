@@ -1,0 +1,18 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+/tests/Assign1.spec.ts
+/tests/GroupTest.spec.ts
+/tests/SelectDate.spec.ts
+/tests/UIActions.spec.ts
+/tests/UIBasics.spec.ts
+/tests/UiLocator.spec.ts
+/tests/UrlCheck.spec.ts
+/example.txt
+/Screenshot.jpg
+/.gitignore
