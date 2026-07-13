@@ -16,3 +16,5 @@ node_modules/
 /example.txt
 /Screenshot.jpg
 /.gitignore
+/XLSX.ts
+/example.xlsx
