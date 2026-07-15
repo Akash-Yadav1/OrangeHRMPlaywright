@@ -15,7 +15,7 @@ export default defineConfig({
   testDir: "./tests/orangehrm",
   timeout: 40 * 1000,
   expect: {
-    timeout: 15 * 1000,
+    timeout: 5 * 1000,
   },
   reporter: [["html", { open: "never" }]],
   use: {
@@ -23,7 +23,7 @@ export default defineConfig({
     channel: "chrome",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
-    video: "off",
+    video: "retain-on-failure",
   },
   retries: 2,
   fullyParallel: false,

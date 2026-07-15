@@ -2,6 +2,7 @@ import { test, expect } from "./fixtures/orangehrm.fixture";
 import { Admin } from "./Pages/Admin";
 import { Pim } from "./Pages/Pim";
 
+test.slow();
 test.describe("OrangeHrm", () => {
   test("Admin", async ({ page, login }) => {
     await page.locator("//a[contains(normalize-space(),'Admin')]").click();
@@ -11,12 +12,18 @@ test.describe("OrangeHrm", () => {
     await admin.AllSysUser();
   });
 
-  test("PIM", async ({ page, login }) => {
-    const pim = new Pim(page);
-    await page.locator("//a[contains(normalize-space(),'PIM')]").click();
-    await page
-      .locator("//li[contains(normalize-space(),'Add Employee')]")
-      .click();
-    await pim.addEmployee("Rahul", "Mathura", "Khan");
-  });
+  test(
+    "PIM",
+    {
+      tag: "@slow",
+    },
+    async ({ page, login }) => {
+      const pim = new Pim(page);
+      await page.locator("//a[contains(normalize-space(),'PIM')]").click();
+      await page
+        .locator("//li[contains(normalize-space(),'Add Employee')]")
+        .click();
+      await pim.addEmployee("Rahul", "Mathura", "Khan");
+    },
+  );
 });
