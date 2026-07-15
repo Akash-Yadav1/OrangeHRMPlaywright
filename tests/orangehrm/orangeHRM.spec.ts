@@ -11,7 +11,7 @@ test.describe("OrangeHrm", () => {
     await admin.AllSysUser();
   });
 
-  test.only("PIM", async ({ page, login }) => {
+  test("PIM", async ({ page, login }) => {
     const pim = new Pim(page);
     await page.locator("//a[contains(normalize-space(),'PIM')]").click();
     await page

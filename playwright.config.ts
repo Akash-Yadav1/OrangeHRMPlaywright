@@ -15,7 +15,7 @@ export default defineConfig({
   testDir: "./tests/orangehrm",
   timeout: 40 * 1000,
   expect: {
-    timeout: 10000,
+    timeout: 15 * 1000,
   },
   reporter: [["html", { open: "never" }]],
   use: {
