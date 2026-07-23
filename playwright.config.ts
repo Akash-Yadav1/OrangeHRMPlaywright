@@ -13,7 +13,7 @@ import { defineConfig, devices } from "@playwright/test";
  */
 export default defineConfig({
   testDir: "./tests/orangehrm",
-  timeout: 40 * 1000,
+  timeout: 10 * 1000,
   expect: {
     timeout: 5 * 1000,
   },
@@ -23,7 +23,7 @@ export default defineConfig({
     channel: "chrome",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
-    video: "retain-on-failure",
+    video: "off",
   },
   retries: 2,
   fullyParallel: false,

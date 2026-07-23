@@ -4,7 +4,7 @@ export class Pim {
   constructor(protected page: Page) {}
 
   async pimNavigate() {
-    this.page.locator("//a[contains(normalize-space(),'PIM')]");
+    await this.page.locator("//a[contains(normalize-space(),'PIM')]").click();
     await this.page
       .locator("//a[contains(normalize-space(),'Add Employee')]")
       .click();

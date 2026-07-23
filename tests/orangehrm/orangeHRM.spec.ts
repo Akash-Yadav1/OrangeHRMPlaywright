@@ -12,18 +12,9 @@ test.describe("OrangeHrm", () => {
     await admin.AllSysUser();
   });
 
-  test(
-    "PIM",
-    {
-      tag: "@slow",
-    },
-    async ({ page, login }) => {
-      const pim = new Pim(page);
-      await page.locator("//a[contains(normalize-space(),'PIM')]").click();
-      await page
-        .locator("//li[contains(normalize-space(),'Add Employee')]")
-        .click();
-      await pim.addEmployee("Rahul", "Mathura", "Khan");
-    },
-  );
+  test("PIM", async ({ page, login }) => {
+    const pim = new Pim(page);
+    await pim.pimNavigate();
+    await pim.addEmployee("Rahul", "Mathura", "Khan");
+  });
 });
